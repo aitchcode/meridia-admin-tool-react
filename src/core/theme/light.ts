@@ -8,7 +8,7 @@ const lightTheme = createTheme({
     ...baseTheme.palette,
     mode: "light",
     background: {
-      paper: colors.white,
+      paper: colors.offwhite,
       default: colors.white,
     },
   },

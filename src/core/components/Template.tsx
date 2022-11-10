@@ -5,10 +5,12 @@ import { ReactElement } from "react";
 const Template = ({ children }: { children: ReactElement }) => (
   <div>
     <AppBar position="fixed" sx={styles.appbar}>
-      <Toolbar>
-        <Typography variant="h6" sx={styles.title}>
-          MeridiaAdminTool
-        </Typography>
+      <Toolbar disableGutters>
+        <Container maxWidth="xl">
+          <Typography variant="h6" sx={styles.title}>
+            MeridiaAdminTool
+          </Typography>
+        </Container>
       </Toolbar>
     </AppBar>
     <Container maxWidth="xl" sx={styles.main}>
@@ -23,7 +25,7 @@ const styles = {
     height: `${AppbarHeight}px`,
   },
   title: { color: "black" },
-  main: { p: 3, pt: `${AppbarHeight + 24}px` },
+  main: { pt: `${AppbarHeight}px` },
 };
 
 export default Template;

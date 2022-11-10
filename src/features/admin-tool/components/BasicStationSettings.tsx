@@ -10,6 +10,7 @@ import {
   InputLabel,
   FormControl,
   MenuItem,
+  Divider,
 } from "@mui/material";
 import { RFGrades } from "core/constants/enum";
 import { identity } from "lodash";
@@ -21,58 +22,68 @@ export const BasicStationSettings = () => (
       Basic Station Settings
     </Typography>
     <Grid container spacing={2}>
-      <Grid item xs={6}>
+      <Grid item xs={6} lg={6} xl={4}>
         <TextField
+          fullWidth
           id="base-id"
           size="small"
           label="Base Id"
           type="number"
-          margin="normal"
+          margin="dense"
+          value={1}
           InputLabelProps={{ shrink: true }}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={6} lg={6} xl={4}>
         <TextField
+          fullWidth
           id="channel"
           size="small"
           label="Channel"
           type="number"
-          margin="normal"
+          margin="dense"
+          value={0}
           InputLabelProps={{ shrink: true }}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={6} lg={6} xl={4}>
         <TextField
+          fullWidth
           id="from-keypad-id"
           size="small"
           label="From Keypad Id"
           type="number"
-          margin="normal"
+          margin="dense"
+          value={1}
           InputLabelProps={{ shrink: true }}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={6} lg={6} xl={4}>
         <TextField
+          fullWidth
           id="to-keypad-id"
           size="small"
           label="To Keypad Id"
           type="number"
-          margin="normal"
+          margin="dense"
+          value={2}
           InputLabelProps={{ shrink: true }}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={6} lg={6} xl={4}>
         <TextField
+          fullWidth
           id="keypad-turn-off-timer"
           size="small"
           label="Keypad Turn Off Timer"
           type="number"
-          margin="normal"
+          margin="dense"
+          value={1}
           InputLabelProps={{ shrink: true }}
         />
       </Grid>
-      <Grid item xs={6}>
-        <FormControl fullWidth size="small" margin="normal">
+      <Grid item xs={6} xl={4}>
+        <FormControl fullWidth size="small" margin="dense">
           <InputLabel id="rf-grade-label">RF Grade</InputLabel>
           <Select
             labelId="rf-grade-label"
@@ -82,9 +93,9 @@ export const BasicStationSettings = () => (
           >
             {Object.keys(RFGrades).map((rfGrade, index) => (
               <MenuItem
-                selected
                 key={identity(`rfGrade-${index}`)}
                 value={index}
+                sx={styles.menuItem}
               >
                 {RFGrades[rfGrade as keyof typeof RFGrades]}
               </MenuItem>
@@ -102,27 +113,34 @@ export const BasicStationSettings = () => (
       </Grid>
       <Grid item xs={6}>
         <FormControlLabel
+          checked
           id="auto-submission"
           label={<Typography variant="body2">Automatic Submission</Typography>}
           control={<Checkbox />}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={3}></Grid>
+      <Grid item xs={6}>
         <Box display="flex" justifyContent="center">
-          <Button variant="contained" sx={styles.btn}>
+          <Button fullWidth variant="contained" sx={styles.btn}>
             Write Settings
           </Button>
         </Box>
+      </Grid>
+      <Grid item xs={3}></Grid>
+      <Grid item xs={12}>
+        <Divider sx={{ my: 1 }} />
       </Grid>
     </Grid>
   </Box>
 );
 
-const styles = {
+export const styles = {
   btn: {
     textTransform: "none",
   },
   underlinedText: {
     textDecoration: "underline",
   },
+  menuItem: { fontSize: "0.875rem" },
 };

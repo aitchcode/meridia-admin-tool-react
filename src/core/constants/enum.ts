@@ -6,3 +6,9 @@ export enum RFGrades {
   MiddlePower = "Middle Power",
   LowPower = "Low Power",
 }
+
+export enum MatchModes {
+  Fixed = "Fixed",
+  Dynamic = "Dynamic",
+  Free = "Free",
+}
