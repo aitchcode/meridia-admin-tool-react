@@ -1,7 +1,9 @@
 const colors = {
   red: "rgba(239,83,80,0.87)",
+  darkRed: "rgba(239,83,80,1)",
   green: "#44D7B5",
   lightGreen: "rgba(68,215,181,0.25)",
+  darkGreen: "#28bd9b",
   yellow: "#ffb35e",
   black: "#424242",
   white: "#ffffff",
